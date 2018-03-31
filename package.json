@@ -1,0 +1,23 @@
+{
+  "name": "imapdb",
+  "version": "1.0.0",
+  "description": "Find the locations where your favorite movies were filmed.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexanderqchen/iMapDB.git"
+  },
+  "author": "Alexander Chen, Sanfeng Wang, Amy Tu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexanderqchen/iMapDB/issues"
+  },
+  "homepage": "https://github.com/alexanderqchen/iMapDB#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3"
+  }
+}
