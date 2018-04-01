@@ -44,11 +44,10 @@ $("#submit").on('click', (e) => {
 
 
 	//send movie name to backend
-    $.post('/',{movieTitle: movieTitle}, function(data){
-        if(data === "done")
+    $.post('/',{movieTitle: movieTitle}, function(id){
+        if(id != -1)
         {
         	console.log("sent to app.js");
-            alert("search success");
         }
     });
 
