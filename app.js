@@ -50,10 +50,10 @@ app.get('/', (req, res) => {
 	res.sendfile("index.html");
 });
 
-app.post('/',function(req,res){
+app.post('/', (req,res) => {
   var movieTitle = req.body.movieTitle;
-  console.log("Movie title is = "+ movieTitle);
-  res.end("yes");
+  console.log("Movie title is = " + movieTitle);
+  res.end("done");
 });
 
 //defines port number the server is on
