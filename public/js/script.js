@@ -44,15 +44,14 @@ $("#submit").on('click', (e) => {
 
 
 	//send movie name to backend
-    $.post('/',{movieTitle: movieTitle}, function(locations){
-        if(locations != []) //checks to make sure that the locations were obtained properly
-        {
-        	console.log("sent to app.js");
-        }
+    $.post('/', {movieTitle: movieTitle}, (locations) => {
+		if(locations == []) {
+			console.log("There was an error.");
+		}
+		else {
+			console.log(locations);
+		}
     });
-
-
-	//get locations from backend
 
 	//for each location
 	service.textSearch({
