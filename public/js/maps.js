@@ -5,3 +5,16 @@ function initMap() {
         zoom: 8
     });
 }
+
+
+const searchBar = document.getElementById("movie_name");
+
+var movieTitle = "";
+
+$("#submit").on('click', (e) => {
+    e.preventDefault();
+    var movieTitle = searchBar.value;
+    movieTitle = movieTitle.replace(/ /g, "+");
+    console.log(movieTitle);
+});
+
