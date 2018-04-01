@@ -36,14 +36,14 @@ function createMarker(place) {
 	});
 }
 
+//occurs when the submit button is clicked
 $("#submit").on('click', (e) => {
 	e.preventDefault();
 	var movieTitle = searchBar.value;
+	//replaces on spaces with plus signs for the request to the API 
 	movieTitle = movieTitle.replace(/ /g, '+');
 	console.log(movieTitle);
-
-
-	//send movie name to backend
+	//send movie name to backend, waits to obtain locations
     $.post('/', {movieTitle: movieTitle}, (locations) => {
 		if(locations == []) {
 			console.log("There was an error.");
