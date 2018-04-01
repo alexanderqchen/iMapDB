@@ -53,7 +53,7 @@ app.get('/', (req, res) => {
 app.post('/',function(req,res){
   var movieTitle = req.body.movieTitle;
   console.log("Movie title is = "+ movieTitle);
-  res.end("yes");
+  res.end("done");
 });
 
 //defines port number the server is on
