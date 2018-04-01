@@ -2,9 +2,17 @@ const searchBar = document.getElementById("search");
 var map;
 var infowindow;
 var service;
+var markersArray = [];
+
+function clearOverlays() {
+  for (var i = 0; i < markersArray.length; i++ ) {
+    markersArray[i].setMap(null);
+  }
+  markersArray.length = 0;
+}
+
 
 function initMap() {
-
 	//create map
 	map = new google.maps.Map(document.getElementById('map'), {
 		center: {lat: 10, lng: 0},
@@ -16,10 +24,9 @@ function initMap() {
 }
 
 function callback(results, status) {
+	//if the search works out and a location is found, it is marked on the map
 	if (status === google.maps.places.PlacesServiceStatus.OK) {
-		for (var i = 0; i < results.length; i++) {
-			createMarker(results[0]);
-		}
+		createMarker(results[0]);
 	}
 }
 
@@ -27,9 +34,10 @@ function createMarker(place) {
 	var placeLoc = place.geometry.location;
 	var marker = new google.maps.Marker({
 		map: map,
-		position: place.geometry.location
+		position: placeLoc
 	});
 
+	markersArray.push(marker);
 	google.maps.event.addListener(marker, 'click', function() {
 		infowindow.setContent(place.name);
 		infowindow.open(map, this);
@@ -51,10 +59,11 @@ $("#submit").on('click', (e) => {
 		else {
 			console.log(locations);
 			console.log(typeof locations);
-
-
+			clearOverlays();
+			//use google search on each location, 
 			for(let i = 0; i < locations.length; i++) {
 				console.log(locations[i].location);
+				//callback function on each location in the array
 				service.textSearch( {query: locations[i].location}, callback);
 			}
 		}
