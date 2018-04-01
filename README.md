@@ -13,16 +13,18 @@ We built the front end using HTML, CSS, and Javascript, and the back end through
 The biggest challenge we ran into was connecting the frontend with the backend. Everyone on our team had only ever worked on one end at a time, so it was definitely a bit of a learning experience.
 
 ## Accomplishments that we're proud of
-
+We were all able to make and fully understand the entire stack. Before this, we had no experience with Node.js or any RESTFUL api, but we were still able to build it. We learned a lot through this app, but we were still able to completely finish it and make a working product.
 
 ## What we learned
-We learned how to use new APIs, such as the Google Maps API and the iMDb database. We also learned how to connect the frontend and the backend.
+We learned how to use new APIs, such as the Google Maps API and the myapifilms IMDB api. We also learned how to setup a node server and connect the frontend to the backend.
 
 ## What's next for iMapDB
-Find a way to show the hometowns of the actor
+We want to find a way to display the hometown's of the main actors of the film, show pictures of the images of the movies, and improve the reliability of the site so that more users can use it more often.
 
 ## Try it out
-[www.imapdb.com]
+www.imapdb.com
+
+[Devpost](https://devpost.com/software/imapdb)
 
 
 
