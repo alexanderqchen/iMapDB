@@ -1,8 +1,10 @@
 const searchBar = document.getElementById("search");
+const loadCircle = document.getElementById("loader");
 var map;
 var infowindow;
 var service;
 var markersArray = [];
+var curLocations;
 
 function clearOverlays() {
   for (var i = 0; i < markersArray.length; i++ ) {
@@ -46,6 +48,7 @@ function createMarker(place) {
 
 //occurs when the submit button is clicked
 $("#submit").on('click', (e) => {
+	loadCircle.style.visibility = "visible";
 	e.preventDefault();
 	var movieTitle = searchBar.value;
 	//replaces on spaces with plus signs for the request to the API 
@@ -57,8 +60,10 @@ $("#submit").on('click', (e) => {
 			console.log("There was an error.");
 		}
 		else {
+			loadCircle.style.visibility = "hidden";
 			console.log(locations);
 			console.log(typeof locations);
+			curLocations = locations;
 			clearOverlays();
 			//use google search on each location, 
 			for(let i = 0; i < locations.length; i++) {
