@@ -48,7 +48,7 @@ app.get('/', (req, res) => {
 	res.sendfile("index.html");
 });
 
-app.post('/',function(req,res){
+app.post('/', (req,res) => {
   var movieTitle = req.body.movieTitle;
   console.log("Movie title is = "+ movieTitle);
   getMovieLocations(movieTitle, (locations) => {
