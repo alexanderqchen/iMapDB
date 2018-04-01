@@ -18,7 +18,7 @@ function initMap() {
 function callback(results, status) {
 	if (status === google.maps.places.PlacesServiceStatus.OK) {
 		for (var i = 0; i < results.length; i++) {
-			createMarker(results[i]);
+			createMarker(results[0]);
 		}
 	}
 }
@@ -50,11 +50,13 @@ $("#submit").on('click', (e) => {
 		}
 		else {
 			console.log(locations);
+			console.log(typeof locations);
+
+
+			for(let i = 0; i < locations.length; i++) {
+				console.log(locations[i].location);
+				service.textSearch( {query: locations[i].location}, callback);
+			}
 		}
     });
-
-	//for each location
-	service.textSearch({
-		query: "Los Angeles"
-	}, callback);
 });
