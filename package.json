@@ -18,6 +18,9 @@
   "homepage": "https://github.com/alexanderqchen/iMapDB#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
-    "express": "^4.16.3"
+    "ejs": "^2.5.8",
+    "express": "^4.16.3",
+    "myapifilms-api": "^1.0.4",
+    "request": "^2.85.0"
   }
 }
