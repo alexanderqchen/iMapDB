@@ -44,6 +44,13 @@ $("#submit").on('click', (e) => {
 
 
 	//send movie name to backend
+    $.post('/',{movieTitle: movieTitle}, function(data){
+        if(data==='done')
+        {
+        	console.log("sent to app.js");
+            alert("search success");
+        }
+    });
 
 
 	//get locations from backend

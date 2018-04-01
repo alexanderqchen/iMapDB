@@ -47,6 +47,13 @@ function getMovieID(movieTitle) {
 app.get('/', (req, res) => {
 	console.log("in get / request");
 	res.send("hello");
+	res.sendfile("index.html");
+});
+
+app.post('/',function(req,res){
+  var movieTitle = req.body.movieTitle;
+  console.log("Movie title is = "+ movieTitle);
+  res.end("yes");
 });
 
 //defines port number the server is on
