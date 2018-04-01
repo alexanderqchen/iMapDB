@@ -44,8 +44,8 @@ $("#submit").on('click', (e) => {
 
 
 	//send movie name to backend
-    $.post('/',{movieTitle: movieTitle}, function(id){
-        if(id != -1)
+    $.post('/',{movieTitle: movieTitle}, function(locations){
+        if(locations != []) //checks to make sure that the locations were obtained properly
         {
         	console.log("sent to app.js");
         }
